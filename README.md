@@ -1,8 +1,6 @@
 # Kanban-JS
 Projeto com o objetivo de aplicar conhecimentos de JavaScript puro
 
-# Kanban JS
-
 ## Requisitos
 - em html, css e javascript (puro)
 - utilizando parcel ou webpack
@@ -88,27 +86,27 @@ PARA que elas saiam do quadro
 ## Modelos
 
 ```typescript
-type Board {
+type Board = {
   id: number
   title: string
   profileId: number
 }
 
-type Column { 
+type Column = { 
   id: number
   name: string
   order: number
   boardId: number
 }
 
-type Task {
+type Task = {
   id: number
   title: string
   done: boolean
   columnId: number
 }
 
-type Profile {
+type Profile = {
   id: number
   name: string
   user: string
