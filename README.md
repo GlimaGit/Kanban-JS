@@ -3,7 +3,7 @@ Projeto com o objetivo de aplicar conhecimentos de JavaScript puro
 
 ## Requisitos
 - em html, css e javascript (puro)
-- utilizando parcel ou webpack
+- utilizando webpack
 - seguindo esquema de branches
 - considerar uso do fake-server
 
