@@ -2,10 +2,9 @@
   "name": "Kanban-JS",
   "version": "1.0.0",
   "description": "Projeto com o objetivo de aplicar conhecimentos de JavaScript puro",
-  "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build": "parcel build src/public/index.html",
+    "start": "parcel serve src/public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,8 +19,9 @@
   },
   "homepage": "https://github.com/GlimaGit/Kanban-JS#readme",
   "dependencies": {
-    "css-loader": "^6.2.0",
-    "webpack": "^5.50.0",
-    "webpack-cli": "^4.7.2"
+    "css-loader": "^6.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
   }
 }
