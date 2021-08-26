@@ -2,14 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="../css/globals.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban JS</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800,900" rel="stylesheet">
   </head>
   <body>
-    <h1>board</h1>
-    <p>oi</p>
+  
+      <div class="boards">
+          <div class="board">
+              <h3>Todo</h3>
+              <div class="dropzone">
+                  <div class="card" draggable="true">
+                      <div class="status green"></div>
+                      <div class="content"> Jantar</div>
+                  </div>
+              </div>
+          </div>
+          <div class="board">
+              <h3>In progress</h3>
+              <div class="dropzone">
+                  <div class="card" draggable="true">
+                      <div class="status blue"></div>
+                      <div class="content"> Estudar CSS</div>
+                  </div>
+              </div>
+          </div>
+          <div class="board">
+              <h3>Done</h3>
+              <div class="dropzone">
+                  <div class="card" draggable="true">
+                      <div class="status red"></div>
+                      <div class="content"> Nicolas Cagezinho</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <script src="script.js" defer></script>
+      
   </body>
-
-  <script src="../index.js"></script>
-</html>
+  </html>

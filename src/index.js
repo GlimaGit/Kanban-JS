@@ -9,12 +9,12 @@ document.getElementById("login").addEventListener("click", function (event) {
 
   const user = document.getElementById("input-login").value;
 
-  if (user || githubUserRegex.test(user)) {
+  if (!user || !githubUserRegex.test(user)) {
     return;
   }
   console.log(user);
 
-  fetch(`https://api.github.com/users/${user}}`)
+  fetch(`https://api.github.com/users/${user}`)
     .then((res) => res.json())
     .then((data) => {
       const stringified = JSON.stringify(data);

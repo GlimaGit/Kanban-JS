@@ -463,9 +463,9 @@ document.getElementById("login").addEventListener("click", function(event) {
     // 3. Salvar dados no localStorage
     // 4. Redirecionar para a próxima página /boards
     const user = document.getElementById("input-login").value;
-    if (user || githubUserRegex.test(user)) return;
+    if (!user || !githubUserRegex.test(user)) return;
     console.log(user);
-    fetch(`https://api.github.com/users/${user}}`).then((res)=>res.json()
+    fetch(`https://api.github.com/users/${user}`).then((res)=>res.json()
     ).then((data)=>{
         const stringified = JSON.stringify(data);
         alert(`${stringified}`);
