@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"97JVM":[function(require,module,exports) {
+})({"jKaBS":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "08525b46174b228b";
+module.bundle.HMR_BUNDLE_ID = "4478c405ada72046";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -454,25 +454,6 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["97JVM"], null, "parcelRequire67cb")
-const githubUserRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-document.getElementById("login").addEventListener("click", function(event) {
-    event.preventDefault();
-    // 1. Validar usuário inserido
-    // 2. Chamar API do Github e obter dados
-    // 3. Salvar dados no localStorage
-    // 4. Redirecionar para a próxima página /boards
-    const user = document.getElementById("input-login").value;
-    if (!user || !githubUserRegex.test(user)) return;
-    console.log(user);
-    fetch(`https://api.github.com/users/${user}`).then((res)=>res.json()
-    ).then((data)=>{
-        const stringified = JSON.stringify(data);
-        alert(`${stringified}`);
-        localStorage.setItem(data.id, stringified);
-        window.location.href = "/boards";
-    }).catch(()=>alert("erro ao buscar usuário no github")
-    );
-});
+},{}]},["jKaBS"], null, "parcelRequire67cb")
 
-//# sourceMappingURL=index.174b228b.js.map
+//# sourceMappingURL=board.ada72046.js.map

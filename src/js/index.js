@@ -6,7 +6,7 @@ document.getElementById("login").addEventListener("click", function (event) {
   // 2. Chamar API do Github e obter dados
   // 3. Salvar dados no localStorage
   // 4. Redirecionar para a próxima página /boards
-
+  // 5. deixar bonito
   const user = document.getElementById("input-login").value;
 
   if (!user || !githubUserRegex.test(user)) {
@@ -18,8 +18,9 @@ document.getElementById("login").addEventListener("click", function (event) {
     .then((res) => res.json())
     .then((data) => {
       const stringified = JSON.stringify(data);
-      alert(`${stringified}`);
-      localStorage.setItem(data.id, stringified);
+      // alert(`${stringified}`);
+      localStorage.setItem("data_user", stringified);
+      window.location.href = "/boards.html";
     })
     .catch(() => alert("erro ao buscar usuário no github"));
 });

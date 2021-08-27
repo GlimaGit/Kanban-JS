@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"97JVM":[function(require,module,exports) {
+})({"dGf4e":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "08525b46174b228b";
+module.bundle.HMR_BUNDLE_ID = "49cc0a4f575712c6";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -454,7 +454,7 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["97JVM"], null, "parcelRequire67cb")
+},{}]},["dGf4e"], null, "parcelRequire67cb")
 const githubUserRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
 document.getElementById("login").addEventListener("click", function(event) {
     event.preventDefault();
@@ -462,17 +462,18 @@ document.getElementById("login").addEventListener("click", function(event) {
     // 2. Chamar API do Github e obter dados
     // 3. Salvar dados no localStorage
     // 4. Redirecionar para a próxima página /boards
+    // 5. deixar bonito
     const user = document.getElementById("input-login").value;
     if (!user || !githubUserRegex.test(user)) return;
     console.log(user);
     fetch(`https://api.github.com/users/${user}`).then((res)=>res.json()
     ).then((data)=>{
         const stringified = JSON.stringify(data);
-        alert(`${stringified}`);
-        localStorage.setItem(data.id, stringified);
-        window.location.href = "/boards";
+        // alert(`${stringified}`);
+        localStorage.setItem("data_user", stringified);
+        window.location.href = "/boards.html";
     }).catch(()=>alert("erro ao buscar usuário no github")
     );
 });
 
-//# sourceMappingURL=index.174b228b.js.map
+//# sourceMappingURL=index.575712c6.js.map

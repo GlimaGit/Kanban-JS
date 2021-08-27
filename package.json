@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Projeto com o objetivo de aplicar conhecimentos de JavaScript puro",
   "scripts": {
-    "build": "parcel build src/public/index.html",
-    "start": "parcel serve src/public/index.html",
+    "build": "parcel build src/index.html src/boards.html src/board.html",
+    "start": "parcel serve src/index.html src/boards.html src/board.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

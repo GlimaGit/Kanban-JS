@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"97JVM":[function(require,module,exports) {
+})({"5grJX":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "08525b46174b228b";
+module.bundle.HMR_BUNDLE_ID = "c4dbbcdc58183b87";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -454,25 +454,59 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["97JVM"], null, "parcelRequire67cb")
-const githubUserRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-document.getElementById("login").addEventListener("click", function(event) {
-    event.preventDefault();
-    // 1. Validar usuário inserido
-    // 2. Chamar API do Github e obter dados
-    // 3. Salvar dados no localStorage
-    // 4. Redirecionar para a próxima página /boards
-    const user = document.getElementById("input-login").value;
-    if (!user || !githubUserRegex.test(user)) return;
-    console.log(user);
-    fetch(`https://api.github.com/users/${user}`).then((res)=>res.json()
-    ).then((data)=>{
-        const stringified = JSON.stringify(data);
-        alert(`${stringified}`);
-        localStorage.setItem(data.id, stringified);
-        window.location.href = "/boards";
-    }).catch(()=>alert("erro ao buscar usuário no github")
-    );
+},{}]},["5grJX"], null, "parcelRequire67cb")
+function log(message) {
+    console.log('> ' + message);
+}
+/** app */ const cards = document.querySelectorAll('.card');
+const dropzones = document.querySelectorAll('.dropzone');
+/** our cards */ cards.forEach((card)=>{
+    card.addEventListener('dragstart', dragstart);
+    card.addEventListener('drag', drag);
+    card.addEventListener('dragend', dragend);
 });
+function dragstart() {
+    // log('CARD: Start dragging ')
+    dropzones.forEach((dropzone)=>dropzone.classList.add('highlight')
+    );
+    // this = card
+    this.classList.add('is-dragging');
+}
+function drag() {
+// log('CARD: Is dragging ')
+}
+function dragend() {
+    // log('CARD: Stop drag! ')
+    dropzones.forEach((dropzone)=>dropzone.classList.remove('highlight')
+    );
+    // this = card
+    this.classList.remove('is-dragging');
+}
+/** place where we will drop cards */ dropzones.forEach((dropzone)=>{
+    dropzone.addEventListener('dragenter', dragenter);
+    dropzone.addEventListener('dragover', dragover);
+    dropzone.addEventListener('dragleave', dragleave);
+    dropzone.addEventListener('drop', drop);
+});
+function dragenter() {
+// log('DROPZONE: Enter in zone ')
+}
+function dragover() {
+    // this = dropzone
+    this.classList.add('over');
+    // get dragging card
+    const cardBeingDragged = document.querySelector('.is-dragging');
+    // this = dropzone
+    this.appendChild(cardBeingDragged);
+}
+function dragleave() {
+    // log('DROPZONE: Leave ')
+    // this = dropzone
+    this.classList.remove('over');
+}
+function drop() {
+    // log('DROPZONE: dropped ')
+    this.classList.remove('over');
+}
 
-//# sourceMappingURL=index.174b228b.js.map
+//# sourceMappingURL=board.58183b87.js.map
